@@ -1,7 +1,13 @@
-// Créer un événément au scroll
+const navBar = document.querySelector('nav');
 
-// Cacher la navbar si l'utilisateur comment à descendre et la sortir quand il remonte
+let scrollStockage;
 
-// Stocker la valeur du précédent niveau de scroll pour savoir si l'on est monté ou descendu
+window.addEventListener('scroll', () => {
+	if (window.scrollY > scrollStockage) {
+		navBar.style.top = '-60px';
+	} else {
+		navBar.style.top = '0px';
+	}
 
-// Connaitre niveau de scroll (window.scrollY)
+	scrollStockage = window.scrollY;
+});
